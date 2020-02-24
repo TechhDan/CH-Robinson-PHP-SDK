@@ -1,6 +1,12 @@
 {
     "author": [
         {
+            "name": "Danny Moreno",
+            "email": "support@techdesign.io",
+            "homepage": "https://techdesign.io/",
+            "role": "Developer"
+        },
+        {
             "name": "MyTruckHub",
             "email": "admin@truckhub.io",
             "homepage": "https://mytruckhub.com/",
@@ -16,12 +22,20 @@
     		"CHRobinson\\": "lib/"
     	}
     },
-    "require-dev": {
-        "symfony/var-dumper": "^4.1",
-		"phpunit/phpunit": "^8.4",
-		"vlucas/phpdotenv": "^4.1"
+    "autoload-dev": {
+        "psr-4": {
+            "CHRobinson\\Test\\": "tests/"
+        }
     },
     "require": {
         "ext-curl": "*"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.1",
+		"phpunit/phpunit": "^8.5",
+		"vlucas/phpdotenv": "^4.1"
+    },
+    "scripts": {
+        "test": "phpunit --bootstrap vendor/autoload.php --colors=always --testdox tests/"
     }
 }

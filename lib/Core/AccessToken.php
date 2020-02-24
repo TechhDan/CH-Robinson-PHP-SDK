@@ -17,7 +17,7 @@ class AccessToken
         $this->createDate = $createDate ? $createDate : time();
     }
 
-    public function isExpired()
+    public function isExpired(): bool
     {
         return time() >= $this->createDate + $this->expiresIn;
     }
